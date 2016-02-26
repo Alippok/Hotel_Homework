@@ -17,11 +17,11 @@ def test_if_guest_can_take_money
   assert_equal(150, @guest1.receive(30))
 end
 
-# def test_if_guest_can_give_money_to_another_guest
-#   result = @guest1.give_money(@guest2, 30)
-#   assert_equal(130, result)
+def test_if_guest_can_give_money_to_another_guest
+  result = @guest1.give_money(@guest2, 30)
+  assert_equal(90, result)
 
-# end
+end
 
 
 end

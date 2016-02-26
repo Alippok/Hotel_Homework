@@ -13,9 +13,13 @@ def receive(amount)
   return @wallet
 end
 
-# def give_money(receiver, amount)
+def give_money(receiver, amount)
+  actual_money = @wallet -= amount
+  money_to_give = @wallet - actual_money
   
-# end
+  receiver.receive(money_to_give)
+  return @wallet
+end
 
 
 

@@ -6,13 +6,21 @@ class SingleRoom
     @stats = {
       "Type" => "single",
       "Capacity" => 1,
-      "Beds" => "",
+      "Beds" => [],
       "Price per night" => 25
 
       }
 
   end
 
+
+def room_available
+  if @stats["Beds"].empty?
+    return "AVAILABLE"
+  else
+    return "TAKEN"
+  end
+end
 
 
 

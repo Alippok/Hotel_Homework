@@ -23,7 +23,11 @@ end
 def test_if_room_can_tell_its_capacity
   result = @room1.stats["Capacity"]
   assert_equal(1, result)
+end
 
+def test_if_room_can_tell_if_bed_is_available
+  result = @room1.room_available
+  assert_equal("AVAILABLE", result)
 end
 
 

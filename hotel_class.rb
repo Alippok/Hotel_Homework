@@ -43,20 +43,14 @@ def room_types
 return room_types
 end
 
-# def room_type_count
-#   room_list = list_rooms
-#    room_count = {
-#     "single" => 0, 
-#     "double" => 0
-#    }
-#    room_array = []
-#    room_list.each do |number, type| 
-#      room_array << 
-#     end
-#   end
-#   return room_count
 
-# end
+def room_type_count
+  room_types_array = room_types
+  hash = Hash.new(0)
+  room_types_array.each{|type| hash[type] += 1 }
+  return hash
+
+end
 
 
 

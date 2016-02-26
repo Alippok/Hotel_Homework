@@ -8,7 +8,14 @@ def initialize(name, money)
  
 end
 
+def receive(amount)
+  @wallet += amount
+  return @wallet
+end
 
+# def give_money(receiver, amount)
+  
+# end
 
 
 

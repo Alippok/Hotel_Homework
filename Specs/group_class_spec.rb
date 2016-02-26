@@ -13,13 +13,33 @@ def setup
   @group1 = Group.new(@guest1, @guest2, @guest3, @guest4)
 end
 
-def test_to_give_all_guests_in_booking
-  assert_equal("Jenny Hill, Garry Hill, Faye Hill, Susan Hill", @group1.list_group)
+def test_to_map_guests_to_a_hash
+  assert_equal({
+     1 => @guest1, 
+     2 => @guest2,
+     3 => @guest3,
+     4 => @guest4
+    }, @group1.list_group)
 end
 
-def test_to_give_rooms_wanted_by_group
-  assert_equal(["double room", "twin room"], @group1.list_rooms)
+def test_to_give_all_guests_in_booking
+  assert_equal({
+    1 => @guest1.name,
+    0 => @guest2.name,
+    3 => @guest3.name,
+    4 => @guest4.name
+    }, @group1.list_names)
 end
+
+# def test_to_give_rooms_wanted_by_group
+#   assert_equal(["double room", "twin room"], @group1.list_rooms)
+# end
+
+# def test_to_give_number_of_beds
+#   assert_equal({double}, @group1.list_beds)
+# end
+
+
 
 
 end

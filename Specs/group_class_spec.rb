@@ -13,8 +13,12 @@ def setup
   @group1 = Group.new(@guest1, @guest2, @guest3, @guest4)
 end
 
-def test_to_see_all_guests_in_booking
+def test_to_give_all_guests_in_booking
   assert_equal("Jenny Hill, Garry Hill, Faye Hill, Susan Hill", @group1.list_group)
+end
+
+def test_to_give_rooms_wanted_by_group
+  assert_equal(["double room", "twin room"], @group1.list_rooms)
 end
 
 

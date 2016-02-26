@@ -40,8 +40,17 @@ def test_if_hotel_can_give_number_of_rooms
   assert_equal(8, result)
 end
 
+def test_return_array_of_only_room_types
+  assert_equal(["single","single","single","single", "double","double","double","double", ], @hotel1.room_types)
+end
 
-
+# def test_if_hotel_can_give_number_of_room_type
+#   result = @hotel1.room_type_count
+#   assert_equal({
+#     "single" => 4,
+#     "double" => 4
+#     }, result)
+# end
 
 
 end

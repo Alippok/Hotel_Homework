@@ -32,8 +32,31 @@ def total_rooms
   end
   return room_list.count
   
-
 end
+
+def room_types
+  room_list = list_rooms
+  room_types = []
+  room_list.each do |number, type| 
+    room_types << type
+  end
+return room_types
+end
+
+# def room_type_count
+#   room_list = list_rooms
+#    room_count = {
+#     "single" => 0, 
+#     "double" => 0
+#    }
+#    room_array = []
+#    room_list.each do |number, type| 
+#      room_array << 
+#     end
+#   end
+#   return room_count
+
+# end
 
 
 

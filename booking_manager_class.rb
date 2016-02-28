@@ -79,7 +79,15 @@ def rate(guest)
 
 end
 
-def collect_revenue(amount)
+def collect_guest_money(guest)
+  amount_to_take = rate(guest)
+  wallets_hash = @reception1.wallets
+  wallets_hash[guest] -= amount_to_take
+  return wallets_hash[guest]
+
+end
+
+def deposit_revenue(amount)
   @hotel1.safe[5910] += amount  
   return @hotel1.safe[5910]
 end

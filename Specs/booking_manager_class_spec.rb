@@ -57,10 +57,12 @@ def test_if_booking_manager_can_take_money_and_add_to_hotel
 end
 
 def test_if_booking_manager_can_add_money_to_hotel
-  assert_equal(75, @booking_manager.collect_revenue(75))
+  assert_equal(75, @booking_manager.deposit_revenue(75))
 end
 
-
+def test_if_booking_manager_can_take_rate_from_customers_money
+ assert_equal(325, @booking_manager.collect_guest_money("Guest 1"))
+end
 
 
 end

@@ -13,7 +13,7 @@ require_relative("../checked_out_class.rb")
 class TestBookingManager < MiniTest::Test
 
 def setup
- 
+  
   @booking_manager = BookingManager.new
 end
 
@@ -68,7 +68,13 @@ def test_if_booking_manager_can_check_guest_in
   assert_equal("UNAVAILABLE", @booking_manager.guest_check_in("Guest 1", 1))
 end
 
+def test_if_booking_manager_can_check_a_guest_out
+  assert_equal("Jenny Hill", @booking_manager.guest_check_out("Guest 1", 1))
+end
 
+def test_if_booking_manager_can_add_guest_to_checked_out
+  assert_equal(["Jenny Hill"], @booking_manager.full_check_out("Guest 1", 1))
+end
 # def
 #   assert_equal(assert_equal({
 #   1 => ["single", "UNAVAILABLE"],

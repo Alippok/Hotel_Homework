@@ -99,10 +99,23 @@ def guest_check_in(guest, room)
   guest_ready = []
   guest_ready << @reception1.guests_objects(guest_required.count)
   
-  @rooms[0+room].receive_guest(guest_ready.flatten)
 
-  return @rooms[0+room].room_available
-
-
+  @rooms[room-1].receive_guest(guest_ready.flatten)
+  return @rooms[room-1].room_available
 end 
+
+
+def guest_check_out(guest, room)
+  guest_check_in(guest, room)
+  guest = @rooms[room-1].stats["Beds"].pop
+  return guest[0].name
+end
+
+def full_check_out(guest, room)
+  guest = guest_check_out(guest, room)
+
+  return @checked_out.check_out(guest)
+  
+end
+
 end

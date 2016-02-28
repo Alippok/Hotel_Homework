@@ -7,13 +7,19 @@ def initialize
 
 end
 
-def check_out(guest)
+def check_out(*guest)
   @guests << guest
-  return @guests
+  return @guests.flatten
 
 end
 
-
+def comments(*guests)#only here for purposes of test
+  guest_comments = {}
+  for guest in guests
+    guest_comments["#{guest.name}"] = "comment"
+  end
+return guest_comments
+end
 
 
 

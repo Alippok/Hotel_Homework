@@ -33,26 +33,29 @@ def receive_multi_guests(*guests)
   return room_available
 end
 
-def occupant_name(guest)#This is only to have a customer in
-  @stats["Beds"] << guest#Done this to make sure there is a 
+def occupant_name(*guests)#This is only to have a customer in
+  guests.each{|guest| @stats["Beds"] << guest }#Done this to make sure there is a 
   #guest acttually in the room. But won't be in the final 
   #method. This method will only be run on UNAVAILABLE ROOMS
   
 
   # guest_array = @stats["Beds"]
-  guest_name = ""
-  @stats["Beds"].each{|guest| guest_name = guest.name}
-  return guest_name
+  guest_name = []
+  @stats["Beds"].each{|guest| guest_name << guest.name}
+  return guest_name 
 end
 
-def occupant_nights(guest)#Again this in only to have a guest
+def occupant_nights(*guests)#Again this in only to have a guest
   #in the room to have details returned
-  @stats["Beds"] << guest
+  guests.each{|guest| @stats["Beds"] << guest }
   
   guest_nights = 0
   @stats["Beds"].each{|guest| guest_nights += guest.nights_needed}
-  return guest_nights
+  return guest_nights - @stats["Beds"][1].nights_needed 
+  #A bit long winded but added this to minus the nights of the
+  #second person as they are in the same party
 end
+
 
 
 #   occupant_details = {

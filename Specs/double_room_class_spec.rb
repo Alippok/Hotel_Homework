@@ -8,7 +8,7 @@ class TestDoubleRoom < MiniTest::Test
 def setup
   @room1 = DoubleRoom.new
   @guest1 = Guest.new(room_wanted: "double room", beds_wanted: 1, name: "Jenny Hill", money: 120, nights: 3)
-  @guest2 = Guest.new(name: "Bob Pratt", money: 100, beds_wanted: 2, room_wanted: "twin room", nights: 4)
+  @guest2 = Guest.new(name: "Bob Pratt", money: 100, beds_wanted: 2, room_wanted: "double room", nights: 3)
 
 end
 
@@ -43,12 +43,12 @@ def test_if_room_can_receive_two_guests
 end
 
 def test_if_room_can_return_guest_name
-  result = @room1.occupant_name(@guest1)
-  assert_equal("Jenny Hill", result)
+  result = @room1.occupant_name(@guest1, @guest2)
+  assert_equal(["Jenny Hill", "Bob Pratt"], result)
 end
 
 def test_if_room_can_retun_guest_nights
-  result = @room1.occupant_nights(@guest1)
+  result = @room1.occupant_nights(@guest1,@guest2)
   assert_equal(3, result)
 end
 # def test_if_room_can_give_guest_details

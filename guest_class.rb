@@ -1,13 +1,13 @@
 class Guest
 
-attr_reader(:name, :wallet, :room_wanted, :beds_wanted, :number_of_nights_needed)
+attr_reader(:name, :wallet, :room_wanted, :beds_wanted, :nights_needed)
 
 def initialize(params)
   @name = params[:name]
   @wallet = params[:money]
   @room_wanted = params[:room_wanted]
   @beds_wanted = params[:beds_wanted]
-  @number_of_nights_needed = params[:nights]
+  @nights_needed = params[:nights]
 end
 
 

@@ -43,8 +43,13 @@ def test_if_room_can_receive_two_guests
 end
 
 def test_if_room_can_return_guest_name
-  result = @room1.occupant_query(@guest1)
+  result = @room1.occupant_name(@guest1)
   assert_equal("Jenny Hill", result)
+end
+
+def test_if_room_can_retun_guest_nights
+  result = @room1.occupant_nights(@guest1)
+  assert_equal(3, result)
 end
 # def test_if_room_can_give_guest_details
 #   result = @room1.occupant_query(@guest1)

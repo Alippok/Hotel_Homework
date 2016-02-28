@@ -37,11 +37,11 @@ def guests_objects(number)
   return guest_array
 end
 
-def guests_rooms
+def guests_rooms_nights
   guest_hash = {}
   index = 1
   for guest in @guests
-    guest_hash["Guest #{index}"] = [guest.name, guest.room_wanted]
+    guest_hash["Guest #{index}"] = [guest.name, guest.room_wanted, guest.nights_needed]
     index += 1
   end
   return guest_hash

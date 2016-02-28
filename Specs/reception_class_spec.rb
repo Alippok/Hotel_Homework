@@ -22,11 +22,11 @@ end
 
 def test_if_reception_can_give_list_of_rooms_wanted
   assert_equal({
-    "Guest 1" => ["Jenny Hill", "single room"],
-    "Guest 2" => ["Bob Jackson", "single room"],
-    "Guest 3" => ["Jill Plairy", "double room"], 
-    "Guest 4" => ["Garry Trist", "single room"]
-     }, @reception1.guests_rooms)
+    "Guest 1" => ["Jenny Hill", "single room", 3],
+    "Guest 2" => ["Bob Jackson", "single room", 1],
+    "Guest 3" => ["Jill Plairy", "double room", 5], 
+    "Guest 4" => ["Garry Trist", "single room", 7]
+     }, @reception1.guests_rooms_nights)
 end
 
 def test_reception_can_return_guests_wallet_amount

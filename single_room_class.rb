@@ -18,11 +18,14 @@ def room_available
   if @stats["Beds"].empty?
     return "AVAILABLE"
   else
-    return "TAKEN"
+    return "UNAVAILABLE"
   end
 end
 
-
+def receive_guest(guest)
+  @stats["Beds"] << guest
+  return room_available
+end
 
 
 

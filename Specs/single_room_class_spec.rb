@@ -1,13 +1,13 @@
 require("minitest/autorun")
 require("minitest/rg")
 require_relative("../single_room_class.rb")
-
+require_relative("../guest_class.rb")
 
 class TestSingleRoom < MiniTest::Test
 
 def setup
 @room1 = SingleRoom.new
-
+@guest1 = Guest.new(room_wanted: "double room", beds_wanted: 1, name: "Jenny Hill", money: 120, nights: 3)
 end
 
 def test_room_can_give_type
@@ -30,6 +30,10 @@ def test_if_room_can_tell_if_bed_is_available
   assert_equal("AVAILABLE", result)
 end
 
+def test_if_room_can_receive_a_guest
+  result = @room1.receive_guest(@guest1)
+  assert_equal("UNAVAILABLE", result)
+end
 
 
 

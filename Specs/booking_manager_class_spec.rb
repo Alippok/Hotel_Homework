@@ -64,5 +64,21 @@ def test_if_booking_manager_can_take_rate_from_customers_money
  assert_equal(325, @booking_manager.collect_guest_money("Guest 1"))
 end
 
+def test_if_booking_manager_can_check_guest_in
+  assert_equal("UNAVAILABLE", @booking_manager.guest_check_in("Guest 1", 1))
+end
 
+
+# def
+#   assert_equal(assert_equal({
+#   1 => ["single", "UNAVAILABLE"],
+#   2 => ["single", "AVAILABLE"],
+#   3 => ["single", "AVAILABLE"],
+#   4 => ["single", "AVAILABLE"],
+#   5 => ["double", "AVAILABLE"],
+#   6 => ["double", "AVAILABLE"],
+#   7 => ["double", "AVAILABLE"],
+#   8 => ["double", "AVAILABLE"]
+#   }, @booking_manager.check_hotel))
+# end
 end

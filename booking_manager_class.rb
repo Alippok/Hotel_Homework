@@ -72,7 +72,7 @@ def rate(guest)
   if room.include?("single")
     return nights * 25
   elsif room_include?("double")
-    return nights * 50
+    return  nights* 50
   end
    #have amount just need to take it from guest and add to hotel
    #Also need to move a customer to and from hotel
@@ -92,5 +92,17 @@ def deposit_revenue(amount)
   return @hotel1.safe[5910]
 end
 
+def guest_check_in(guest, room)
 
+  guest_required = []
+  guest_required << guest
+  guest_ready = []
+  guest_ready << @reception1.guests_objects(guest_required.count)
+  
+  @rooms[0+room].receive_guest(guest_ready.flatten)
+
+  return @rooms[0+room].room_available
+
+
+end 
 end

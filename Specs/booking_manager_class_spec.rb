@@ -32,4 +32,13 @@ def test_booking_manager_can_check_reception_for_number_of_guests
   assert_equal(4, @booking_manager.waiting_guests)
 end
 
+def test_booking_manager_can_access_customers_details
+  assert_equal({
+    "Guest 1" => ["Jenny Hill", "single room", 3],
+    "Guest 2" => ["Bob Jackson", "single room", 1],
+    "Guest 3" => ["Jill Plairy", "double room", 5], 
+    "Guest 4" => ["Garry Trist", "single room", 7]
+     }, @booking_manager.guests_rooms_nights)
+end
+
 end

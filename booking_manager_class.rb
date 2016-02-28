@@ -13,6 +13,10 @@ def waiting_guests
   return @reception1.number_guests
 end
 
+def guests_rooms_nights
+ return @reception1.guests_rooms_nights
+end
+
 
 
 

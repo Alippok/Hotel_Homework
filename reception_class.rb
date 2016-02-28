@@ -1,6 +1,6 @@
 class Reception
 
-attr_reader(:guests)
+attr_reader(:guests, :wallets)
 
 def initialize
 
@@ -19,7 +19,15 @@ def number_guests
   return @guests.count
 end
 
-
+def wallets
+  wallet_hash = {}
+  index = 1
+  for guest in @guests
+    wallet_hash["Guest#{index}"] = guest.wallet
+    index += 1
+  end
+  return wallet_hash
+end
 
 
 

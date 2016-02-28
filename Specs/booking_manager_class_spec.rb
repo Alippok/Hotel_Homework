@@ -53,6 +53,14 @@ assert_equal({
 end
 
 def test_if_booking_manager_can_take_money_and_add_to_hotel
- assert_equal(75, @booking_manager.rate)
+ assert_equal(75, @booking_manager.rate("Guest 1"))
 end
+
+def test_if_booking_manager_can_add_money_to_hotel
+  assert_equal(75, @booking_manager.collect_revenue(75))
+end
+
+
+
+
 end

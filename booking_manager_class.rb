@@ -62,6 +62,21 @@ def guest_room_match
   return list
 end
 
+def rate
+  guests = guests_rooms_nights
+  list = guest_room_match
+  money = @reception1.wallets
+
+  nights = guests["Guest 1"][2]
+  room = guests["Guest 1"][1]
+  if room.include?("single")
+    return nights * 25
+  elsif room_include?("double")
+    return nights * 50
+  end
+   
+
+end
 
 
 end

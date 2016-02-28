@@ -39,7 +39,15 @@ def occupant_name(guest)#This is only to have a customer in
   return guest_name 
 end
 
-
+def occupant_nights(guest)#Again this in only to have a guest
+  #in the room to have details returned
+  @stats["Beds"] << guest #This wont be needed at run time
+  
+  guest_nights = 0
+  @stats["Beds"].each{|guest| guest_nights += guest.nights_needed}
+  return guest_nights
+ 
+end
 
 
 

@@ -40,6 +40,10 @@ def test_if_room_can_return_guest_name
   assert_equal("Jenny Hill", result)
 end
 
+def test_if_room_can_return_guest_nights
+  result = @room1.occupant_nights(@guest1)
+  assert_equal(3, result)
+end
 
 
 end

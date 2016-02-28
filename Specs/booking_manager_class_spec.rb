@@ -43,5 +43,13 @@ def test_booking_manager_can_check_for_available_rooms
   }, @booking_manager.check_hotel)
 end
 
+def test_if_booking_manager_can_match_guests_with_rooms
+assert_equal({
+  "Guest 1" => "Room is available",
+  "Guest 2" => "Room is available",
+  "Guest 3" => "Room is available",
+  "Guest 4" => "Room is available"
+  }, @booking_manager.guest_room_match)
+end
 
 end

@@ -38,6 +38,29 @@ def check_hotel
   end
 end
 
+def guest_room_match
+  list = guests_rooms_nights
+  hotel = check_hotel
+  index = 1
+  availability = []
+  
+  for guest, details in list
+    details[1]
+
+    for room, type in hotel
+      if details[1].include?(type[0])
+        availability.push(type[1])
+      end
+    end
+   if availability.include?("AVAILABLE")
+    list["Guest #{index}"] = "Room is available"
+   elsif availability.include?("UNAVAILABLE")
+    list["Guest #{index}"] = "Room is unavailable"
+   end
+   index += 1
+  end
+  return list
+end
 
 
 

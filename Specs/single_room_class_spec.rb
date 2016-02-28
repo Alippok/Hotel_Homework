@@ -35,6 +35,11 @@ def test_if_room_can_receive_a_guest
   assert_equal("UNAVAILABLE", result)
 end
 
+def test_if_room_can_return_guest_name
+  result = @room1.occupant_name(@guest1)
+  assert_equal("Jenny Hill", result)
+end
+
 
 
 end

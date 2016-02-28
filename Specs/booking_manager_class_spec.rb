@@ -13,19 +13,8 @@ require_relative("../checked_out_class.rb")
 class TestBookingManager < MiniTest::Test
 
 def setup
-  @room1 = SingleRoom.new
-  @room2 = SingleRoom.new
-  @room3 = SingleRoom.new
-  @room4 = SingleRoom.new
-  @room5 = DoubleRoom.new
-  @room6 = DoubleRoom.new
-  @room7 = DoubleRoom.new
-  @room8 = DoubleRoom.new
-
-  @rooms = [@room1, @room2, @room3, @room4, @room5, @room6, @room7, @room8, ]
-
-  @hotel1 = Hotel.new("Hotel California", @rooms )
-  @booking_manager = BookingManager.new(@hotel1, )
+ 
+  @booking_manager = BookingManager.new
 end
 
 def test_booking_manager_can_check_reception_for_number_of_guests
@@ -40,5 +29,19 @@ def test_booking_manager_can_access_customers_details
     "Guest 4" => ["Garry Trist", "single room", 7]
      }, @booking_manager.guests_rooms_nights)
 end
+
+def test_booking_manager_can_check_for_available_rooms
+  assert_equal({
+  1 => ["single", "AVAILABLE"],
+  2 => ["single", "AVAILABLE"],
+  3 => ["single", "AVAILABLE"],
+  4 => ["single", "AVAILABLE"],
+  5 => ["double", "AVAILABLE"],
+  6 => ["double", "AVAILABLE"],
+  7 => ["double", "AVAILABLE"],
+  8 => ["double", "AVAILABLE"]
+  }, @booking_manager.check_hotel)
+end
+
 
 end

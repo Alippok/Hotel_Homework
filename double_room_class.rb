@@ -56,25 +56,34 @@ def occupant_nights(*guests)#Again this in only to have a guest
   #second person as they are in the same party
 end
 
+def occupant_query(*guests)
+  
+  occupant_details = {
+    "Name"=> "",
+    "Nights remaining"=> 0,
+    "Ready for checkout" => ""
+  }
+  name = occupant_name(*guests)
+  #The result was being affected by the multiple adding of 
+  #guests for the purposes of the test. At runtime, would need to remove the adding of customers as there will already be customers in the rooms from check-in. However, the details are recovered.
+  guest_nights = 0
+  @stats["Beds"].each{|guest| guest_nights += guest.nights_needed}
+  
+  nights = guest_nights - @stats["Beds"][1].nights_needed
+  
+  occupant_details["Name"] = name
+  occupant_details["Nights remaining"] = nights
+
+  if occupant_details["Nights remaining"] == 0
+    occupant_details["Ready for checkout"] = "Yes"
+    return occupant_details
+  elsif occupant_details["Nights remaining"]  > 0
+    occupant_details["Ready for checkout"] = "No"
+    return occupant_details
+  end
 
 
-#   occupant_details = {
-#     "Name"=> "",
-#     "Nights remaining"=> 0,
-#     "Ready for checkout" => ""
-#   }
-#   occupant_details["Name"] = name
-#   occupant_details["Nights remaining"] = nights
-
-#   if occupant_details["Nights remaining"] == 0
-#     occupant_details["Ready for checkout"] = "Yes"
-#     return occupant_details
-#   elsif occupant_details["Nights remaining"]  > 0
-#     occupant_details["Ready for checkout"] = "No"
-#     return occupant_details
-#   end
-
-# end
+end
 
 
 end

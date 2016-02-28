@@ -45,5 +45,9 @@ def test_if_room_can_return_guest_nights
   assert_equal(3, result)
 end
 
+def test_if_room_can_give_guest_details
+  result = @room1.occupant_query(@guest1)
+  assert_equal({"Name"=>"Jenny Hill", "Nights remaining" => 3, "Ready for checkout"=>"No"}, result)
+end
 
 end

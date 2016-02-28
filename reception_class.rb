@@ -23,7 +23,7 @@ def wallets
   wallet_hash = {}
   index = 1
   for guest in @guests
-    wallet_hash["Guest#{index}"] = guest.wallet
+    wallet_hash["Guest #{index}"] = guest.wallet
     index += 1
   end
   return wallet_hash
@@ -37,6 +37,15 @@ def guests_objects(number)
   return guest_array
 end
 
+def guests_rooms
+  guest_hash = {}
+  index = 1
+  for guest in @guests
+    guest_hash["Guest #{index}"] = [guest.name, guest.room_wanted]
+    index += 1
+  end
+  return guest_hash
+end
 
 
 

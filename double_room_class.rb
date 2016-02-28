@@ -22,6 +22,11 @@ def room_available
   end
 end
 
+def receive_guest(guest)
+  @stats["Beds"] << guest
+  return room_available
+end
+
 
 
 

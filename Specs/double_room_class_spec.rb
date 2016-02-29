@@ -47,7 +47,7 @@ def test_if_room_can_return_guest_name
   assert_equal(["Jenny Hill", "Bob Pratt"], result)
 end
 
-def test_if_room_can_retun_guest_nights
+def test_if_room_can_return_guest_nights
   result = @room1.occupant_nights(@guest1,@guest2)
   assert_equal(3, result)
 end

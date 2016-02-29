@@ -24,14 +24,14 @@ end
 
 def test_if_hotel_can_list_numbered_rooms_and_types
 assert_equal({
-  1 => "single",
-  2 => "single",
-  3 => "single",
-  4 => "single",
-  5 => "double",
-  6 => "double",
-  7 => "double",
-  8 => "double",
+  1 => @room1,
+  2 => @room2,
+  3 => @room3,
+  4 => @room4,
+  5 => @room5,
+  6 => @room6,
+  7 => @room7,
+  8 => @room8,
   }, @hotel1.list_rooms)
 end
 

@@ -17,7 +17,7 @@ def list_rooms
   room_list = {}
   index = 1
   for room in @rooms.flatten
-    room_list[index] = room.stats["Type"]
+    room_list[index] = room
     index += 1
   end
   return room_list
@@ -38,7 +38,7 @@ def room_types
   room_list = list_rooms
   room_types = []
   room_list.each do |number, type| 
-    room_types << type
+    room_types << type.stats["Type"]
   end
 return room_types
 end
@@ -52,6 +52,7 @@ def room_type_count
 
 end
 
+#Can then use above code to count number of available room types
 
 
 

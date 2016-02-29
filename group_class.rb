@@ -33,13 +33,15 @@ def list_names
 
 end
 
-# def list_rooms
-#   room_list = []
-#     for guest in @guests
-#       room_list << guest.room_wanted
-#     end
-#   return room_list.uniq
-# end
+def list_rooms
+  room_list = []
+    for guest in @guests
+      room_list << guest.room_wanted
+    end
+  return room_list.uniq
+end
+
+
 
 # def list_beds
 #   double_bed_list = 0

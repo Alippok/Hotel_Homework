@@ -62,6 +62,10 @@ def guest_room_match
   return list
 end
 
+def view_hotel_safe
+  return @hotel1.safe[5910]
+end
+
 def rate(guest)
   guests = guests_rooms_nights
   list = guest_room_match
